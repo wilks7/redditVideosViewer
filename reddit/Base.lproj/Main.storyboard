@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5kj-WL-i54">
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Videos-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="856-gm-Cs1">
+                                <frame key="frameInset" minX="20" minY="160" width="1880" height="900"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="V0j-sc-JkZ" customClass="CustomTableViewCell" customModule="reddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="1880" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V0j-sc-JkZ" id="MMf-MA-5eL">
+                                            <frame key="frameInset" width="1864" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a8G-kG-UY4" userLabel="Collectionview">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="20" id="STR-fg-Q01">
+                                                        <size key="itemSize" width="350" height="300"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="fQ6-xT-dVw" customClass="PostCollectionViewCell" customModule="reddit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eeB-6c-zAz">
+                                                                        <frame key="frameInset" width="350" height="250"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSO-EV-jck">
+                                                                        <frame key="frameInset" minX="96" minY="257" width="158" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <connections>
+                                                                <outlet property="imageviewOutlet" destination="eeB-6c-zAz" id="ldA-1N-3cI"/>
+                                                                <outlet property="titleOutlet" destination="DSO-EV-jck" id="LiG-2A-XDx"/>
+                                                                <segue destination="1w7-e9-tQD" kind="show" identifier="toPost" id="ZcZ-U1-OdB"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="V0j-sc-JkZ" id="KQf-hL-8dY"/>
+                                                        <outlet property="delegate" destination="V0j-sc-JkZ" id="Bga-gJ-MpZ"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="a8G-kG-UY4" secondAttribute="bottom" id="WS2-Hq-POr"/>
+                                                <constraint firstAttribute="trailing" secondItem="a8G-kG-UY4" secondAttribute="trailing" id="b3c-9r-dll"/>
+                                                <constraint firstItem="a8G-kG-UY4" firstAttribute="top" secondItem="MMf-MA-5eL" secondAttribute="top" id="wAU-Mk-nLF"/>
+                                                <constraint firstItem="a8G-kG-UY4" firstAttribute="leading" secondItem="MMf-MA-5eL" secondAttribute="leading" id="xMF-TY-CF3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionviewOutlet" destination="a8G-kG-UY4" id="soT-4K-Coc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ylJ-ay-5LL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="w3S-74-ZEY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Videos" id="RBc-SI-m3D"/>
+                    <navigationItem key="navigationItem" id="0Us-uH-51k"/>
+                    <connections>
+                        <segue destination="1w7-e9-tQD" kind="show" identifier="toPost" id="76C-5U-DtJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3723" y="75"/>
+        </scene>
+        <!--Music-->
+        <scene sceneID="fbY-lr-2KC">
+            <objects>
+                <viewController id="VzT-8j-cZa" customClass="ViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TxT-4M-Vlh"/>
+                        <viewControllerLayoutGuide type="bottom" id="OGc-tz-S9E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eGx-WP-d5u">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="QaI-Ir-CmY">
+                                <frame key="frameInset" minX="20" minY="160" width="1880" height="900"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="89z-va-Nfz" customClass="CustomTableViewCell" customModule="reddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="1880" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="89z-va-Nfz" id="bLW-cF-eiA">
+                                            <frame key="frameInset" width="1864" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d7E-AN-gfk" userLabel="Collectionview">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="20" id="flM-2D-GFh">
+                                                        <size key="itemSize" width="350" height="300"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="kXP-rQ-ghI" customClass="PostCollectionViewCell" customModule="reddit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G2F-gu-6aL">
+                                                                        <frame key="frameInset" width="350" height="250"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUD-AO-64b">
+                                                                        <frame key="frameInset" minX="96" minY="257" width="158" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <connections>
+                                                                <outlet property="imageviewOutlet" destination="G2F-gu-6aL" id="vP9-tu-1KZ"/>
+                                                                <outlet property="titleOutlet" destination="vUD-AO-64b" id="bOm-xQ-TYi"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="89z-va-Nfz" id="LZg-Yd-ZaX"/>
+                                                        <outlet property="delegate" destination="89z-va-Nfz" id="xmW-Q3-GNJ"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="d7E-AN-gfk" secondAttribute="trailing" id="73x-4f-DqR"/>
+                                                <constraint firstItem="d7E-AN-gfk" firstAttribute="leading" secondItem="bLW-cF-eiA" secondAttribute="leading" id="7gA-dg-d8T"/>
+                                                <constraint firstAttribute="bottom" secondItem="d7E-AN-gfk" secondAttribute="bottom" id="d9z-tV-ZS0"/>
+                                                <constraint firstItem="d7E-AN-gfk" firstAttribute="top" secondItem="bLW-cF-eiA" secondAttribute="top" id="yDr-Aw-Ntz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionviewOutlet" destination="d7E-AN-gfk" id="8kQ-C3-ujR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VzT-8j-cZa" id="rls-q6-MnI"/>
+                                    <outlet property="delegate" destination="VzT-8j-cZa" id="I3p-nO-LCu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Music" id="2E9-QC-laD"/>
+                    <navigationItem key="navigationItem" id="Zrz-Ep-aIf"/>
+                    <connections>
+                        <segue destination="1w7-e9-tQD" kind="show" identifier="toPost" id="3ry-53-ya4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQ0-sI-wyO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3682" y="-2053"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="f6e-rf-DG5">
+            <objects>
+                <viewController id="1w7-e9-tQD" customClass="PostViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ndA-Xl-jYn"/>
+                        <viewControllerLayoutGuide type="bottom" id="UVl-Pp-YJR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ray-Gn-1GN">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTf-EA-w5K">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="620" id="I5s-Iu-fGH"/>
+                                    <constraint firstAttribute="height" constant="320" id="Sbb-6f-Pwv"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lUn-rH-HWE">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COe-Gt-cFr">
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcp-mE-flD">
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH6-Lz-E1n">
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0L-j0-CdH">
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEV-ky-ncV">
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="950" id="Ijz-ra-sfL"/>
+                                    <constraint firstAttribute="height" constant="400" id="nGF-Iq-ijc"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bc-ez-HZK">
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <segue destination="nKV-4T-O66" kind="show" id="LIz-A5-Jmg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-GE-qfR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="TOZ-N6-fBM"/>
+                                    <constraint firstAttribute="width" constant="1880" id="w01-Ni-Rk3"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" size="42" name="TrebuchetMS"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="p9d-GE-qfR" firstAttribute="centerX" secondItem="ray-Gn-1GN" secondAttribute="centerX" id="0WA-67-EZk"/>
+                            <constraint firstItem="yTf-EA-w5K" firstAttribute="centerY" secondItem="ray-Gn-1GN" secondAttribute="centerY" id="66D-6E-fJd"/>
+                            <constraint firstItem="lUn-rH-HWE" firstAttribute="centerY" secondItem="ray-Gn-1GN" secondAttribute="centerY" id="CZn-ag-1nE"/>
+                            <constraint firstItem="8bc-ez-HZK" firstAttribute="centerX" secondItem="ray-Gn-1GN" secondAttribute="centerX" id="FIm-Bd-TVb"/>
+                            <constraint firstItem="UVl-Pp-YJR" firstAttribute="top" secondItem="8bc-ez-HZK" secondAttribute="bottom" constant="98" id="b1f-gg-CAz"/>
+                            <constraint firstItem="lUn-rH-HWE" firstAttribute="leading" secondItem="ray-Gn-1GN" secondAttribute="leadingMargin" constant="136" id="cWV-hV-eOd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yTf-EA-w5K" secondAttribute="trailing" constant="96" id="dQr-bc-nPw"/>
+                            <constraint firstItem="p9d-GE-qfR" firstAttribute="top" secondItem="ndA-Xl-jYn" secondAttribute="bottom" constant="126" id="fhW-5m-xNU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePostedOutlet" destination="cEV-ky-ncV" id="IdE-8Y-yqx"/>
+                        <outlet property="imageviewOutlet" destination="yTf-EA-w5K" id="lhN-4k-n8V"/>
+                        <outlet property="subredditOutlet" destination="gH6-Lz-E1n" id="XXT-Zh-fvq"/>
+                        <outlet property="titleOutlet" destination="p9d-GE-qfR" id="xwr-Jo-21L"/>
+                        <outlet property="upvotesOutlet" destination="A0L-j0-CdH" id="dx7-Su-5q7"/>
+                        <outlet property="youtubeLinkOutlet" destination="fcp-mE-flD" id="Mtt-Kf-BFE"/>
+                        <outlet property="youtubeTitleOutlet" destination="COe-Gt-cFr" id="TIC-Ll-BmB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Etm-Ae-gco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6803" y="75"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="R1e-CB-OBi">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="nKV-4T-O66" customClass="PlayerViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfy-pj-aEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9178" y="75"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Zr1-87-GNP">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5kj-WL-i54" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iFZ-Ic-oIo">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bx7-Kv-EB8"/>
+                        <segue destination="ZLf-q0-ekX" kind="relationship" relationship="viewControllers" id="sgi-ZG-57a"/>
+                        <segue destination="VzT-8j-cZa" kind="relationship" relationship="viewControllers" id="FRS-Ha-Xza"/>
+                        <segue destination="SYW-73-28A" kind="relationship" relationship="viewControllers" id="TyM-au-nor"/>
+                        <segue destination="maS-LF-qDY" kind="relationship" relationship="viewControllers" id="Yom-eE-YUw"/>
+                        <segue destination="t3v-eR-UAc" kind="relationship" relationship="viewControllers" id="6yD-Yr-hZZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvw-DS-VYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-498" y="75"/>
+        </scene>
+        <!--TV-->
+        <scene sceneID="XQ6-H3-vp2">
+            <objects>
+                <viewController id="ZLf-q0-ekX" customClass="ViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RgF-sv-mp0"/>
+                        <viewControllerLayoutGuide type="bottom" id="a8n-A6-12D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UQ2-Pq-NSc">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="OD7-7q-iuk">
+                                <frame key="frameInset" minX="20" minY="160" width="1880" height="900"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="YZU-YQ-KO5" customClass="CustomTableViewCell" customModule="reddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="1880" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YZU-YQ-KO5" id="R9m-gK-uKe">
+                                            <frame key="frameInset" width="1864" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ag1-mT-KTv" userLabel="Collectionview">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="20" id="LcN-Ew-3Gf">
+                                                        <size key="itemSize" width="350" height="300"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="xrj-u4-us7" customClass="PostCollectionViewCell" customModule="reddit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4aG-Q6-8gA">
+                                                                        <frame key="frameInset" width="350" height="250"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpy-47-IrV">
+                                                                        <frame key="frameInset" minX="96" minY="257" width="158" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <connections>
+                                                                <outlet property="imageviewOutlet" destination="4aG-Q6-8gA" id="ssX-NN-Tf6"/>
+                                                                <outlet property="titleOutlet" destination="Fpy-47-IrV" id="Fbt-yf-Thb"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="YZU-YQ-KO5" id="Uha-47-ZLm"/>
+                                                        <outlet property="delegate" destination="YZU-YQ-KO5" id="IJ0-1N-dje"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ag1-mT-KTv" firstAttribute="leading" secondItem="R9m-gK-uKe" secondAttribute="leading" id="0HU-iA-8W9"/>
+                                                <constraint firstAttribute="trailing" secondItem="ag1-mT-KTv" secondAttribute="trailing" id="HSz-sI-bRy"/>
+                                                <constraint firstItem="ag1-mT-KTv" firstAttribute="top" secondItem="R9m-gK-uKe" secondAttribute="top" id="c02-Nf-Md0"/>
+                                                <constraint firstAttribute="bottom" secondItem="ag1-mT-KTv" secondAttribute="bottom" id="iRJ-7t-Dag"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionviewOutlet" destination="ag1-mT-KTv" id="bvo-Ej-pOd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZLf-q0-ekX" id="7go-SV-Sd2"/>
+                                    <outlet property="delegate" destination="ZLf-q0-ekX" id="x3k-vG-Dkz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="TV" id="t9z-nX-tH8"/>
+                    <navigationItem key="navigationItem" id="haf-bz-vYX"/>
+                    <connections>
+                        <segue destination="1w7-e9-tQD" kind="show" identifier="toPost" id="3te-3L-jRl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ooh-NC-0s8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3682" y="-4029"/>
+        </scene>
+        <!--Gaming-->
+        <scene sceneID="mbz-qi-aFd">
+            <objects>
+                <viewController id="SYW-73-28A" customClass="ViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pqw-6O-Lym"/>
+                        <viewControllerLayoutGuide type="bottom" id="pR5-11-CXc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fZd-M1-16U">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="Ta7-dP-LBT">
+                                <frame key="frameInset" minX="20" minY="160" width="1880" height="900"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="Iio-8Z-m6c" customClass="CustomTableViewCell" customModule="reddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="1880" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iio-8Z-m6c" id="jZW-00-X3D">
+                                            <frame key="frameInset" width="1864" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y9a-VO-mc7" userLabel="Collectionview">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="20" id="XhQ-fc-cw3">
+                                                        <size key="itemSize" width="350" height="300"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="4MK-Wg-x3N" customClass="PostCollectionViewCell" customModule="reddit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6pF-jg-wvc">
+                                                                        <frame key="frameInset" width="350" height="250"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-di-Ttg">
+                                                                        <frame key="frameInset" minX="96" minY="257" width="158" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <connections>
+                                                                <outlet property="imageviewOutlet" destination="6pF-jg-wvc" id="13e-c6-FDb"/>
+                                                                <outlet property="titleOutlet" destination="NMZ-di-Ttg" id="coc-nd-9YZ"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="Iio-8Z-m6c" id="Bn6-xK-FSK"/>
+                                                        <outlet property="delegate" destination="Iio-8Z-m6c" id="LBA-Wv-pCE"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="y9a-VO-mc7" secondAttribute="bottom" id="YC5-F9-Dhe"/>
+                                                <constraint firstItem="y9a-VO-mc7" firstAttribute="top" secondItem="jZW-00-X3D" secondAttribute="top" id="fOw-An-f5E"/>
+                                                <constraint firstItem="y9a-VO-mc7" firstAttribute="leading" secondItem="jZW-00-X3D" secondAttribute="leading" id="gX1-eq-sRp"/>
+                                                <constraint firstAttribute="trailing" secondItem="y9a-VO-mc7" secondAttribute="trailing" id="grB-bu-iJa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionviewOutlet" destination="y9a-VO-mc7" id="LOy-B4-SMR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SYW-73-28A" id="yVX-NC-kGY"/>
+                                    <outlet property="delegate" destination="SYW-73-28A" id="7AJ-nV-bSF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gaming" id="2ed-S4-5Kj"/>
+                    <navigationItem key="navigationItem" id="tGX-fd-TZO"/>
+                    <connections>
+                        <segue destination="1w7-e9-tQD" kind="show" identifier="toPost" id="zOx-y0-ZIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMC-7T-heR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3682" y="2131"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="B5X-0S-grP">
+            <objects>
+                <viewController id="maS-LF-qDY" customClass="ViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PTv-iA-6DS"/>
+                        <viewControllerLayoutGuide type="bottom" id="AVb-5Z-EkW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gN0-jR-PV8">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="syR-Z5-suV">
+                                <frame key="frameInset" minX="20" minY="160" width="1880" height="900"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="Pdy-2m-mUt" customClass="CustomTableViewCell" customModule="reddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="1880" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pdy-2m-mUt" id="KhI-WL-Rn7">
+                                            <frame key="frameInset" width="1864" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5uf-w1-dnb" userLabel="Collectionview">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="20" id="TeD-dH-HLw">
+                                                        <size key="itemSize" width="350" height="300"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="5h7-vk-laY" customClass="PostCollectionViewCell" customModule="reddit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnf-D3-PGa">
+                                                                        <frame key="frameInset" width="350" height="250"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-sp-cM3">
+                                                                        <frame key="frameInset" minX="96" minY="257" width="158" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <connections>
+                                                                <outlet property="imageviewOutlet" destination="cnf-D3-PGa" id="jqg-uJ-tvK"/>
+                                                                <outlet property="titleOutlet" destination="p7e-sp-cM3" id="8Z4-bj-9wq"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="Pdy-2m-mUt" id="QJA-eB-VFZ"/>
+                                                        <outlet property="delegate" destination="Pdy-2m-mUt" id="gTH-3X-Zqq"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5uf-w1-dnb" secondAttribute="trailing" id="6nh-fM-88D"/>
+                                                <constraint firstItem="5uf-w1-dnb" firstAttribute="top" secondItem="KhI-WL-Rn7" secondAttribute="top" id="ROC-a3-b3V"/>
+                                                <constraint firstAttribute="bottom" secondItem="5uf-w1-dnb" secondAttribute="bottom" id="nFn-ot-dZb"/>
+                                                <constraint firstItem="5uf-w1-dnb" firstAttribute="leading" secondItem="KhI-WL-Rn7" secondAttribute="leading" id="sMg-Di-Urr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionviewOutlet" destination="5uf-w1-dnb" id="fVU-TN-lfb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="maS-LF-qDY" id="QRz-33-fa3"/>
+                                    <outlet property="delegate" destination="maS-LF-qDY" id="xux-G8-ElO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Movies" id="qC3-G7-2nq"/>
+                    <navigationItem key="navigationItem" id="5ue-Dm-Cna"/>
+                    <connections>
+                        <segue destination="1w7-e9-tQD" kind="show" identifier="toPost" id="h2B-Og-cks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rht-aO-V8W" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3723" y="4275"/>
+        </scene>
+        <!--Front Page-->
+        <scene sceneID="f8c-rj-83N">
+            <objects>
+                <viewController id="t3v-eR-UAc" customClass="ViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bwf-M6-yGX"/>
+                        <viewControllerLayoutGuide type="bottom" id="8BB-mr-qWu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="chO-k1-mBz">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="yZJ-yu-Oik">
+                                <frame key="frameInset" minX="20" minY="160" width="1880" height="900"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="hVQ-X3-ooe" customClass="CustomTableViewCell" customModule="reddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="1880" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hVQ-X3-ooe" id="Q9N-7s-DDM">
+                                            <frame key="frameInset" width="1864" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-Wv-56M" userLabel="Collectionview">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="20" id="af6-VD-Shy">
+                                                        <size key="itemSize" width="350" height="300"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="6Ff-Cx-YLe" customClass="PostCollectionViewCell" customModule="reddit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYY-2U-zkZ">
+                                                                        <frame key="frameInset" width="350" height="250"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-4b-HX4">
+                                                                        <frame key="frameInset" minX="96" minY="257" width="158" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <connections>
+                                                                <outlet property="imageviewOutlet" destination="mYY-2U-zkZ" id="NYt-RB-CDn"/>
+                                                                <outlet property="titleOutlet" destination="EdT-4b-HX4" id="r66-tc-GBr"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="hVQ-X3-ooe" id="vDn-Cb-a4x"/>
+                                                        <outlet property="delegate" destination="hVQ-X3-ooe" id="iZU-sc-94Y"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vrR-Wv-56M" firstAttribute="leading" secondItem="Q9N-7s-DDM" secondAttribute="leading" id="1O1-XS-Dr6"/>
+                                                <constraint firstAttribute="trailing" secondItem="vrR-Wv-56M" secondAttribute="trailing" id="SaB-se-eMi"/>
+                                                <constraint firstAttribute="bottom" secondItem="vrR-Wv-56M" secondAttribute="bottom" id="cyz-hW-Ln3"/>
+                                                <constraint firstItem="vrR-Wv-56M" firstAttribute="top" secondItem="Q9N-7s-DDM" secondAttribute="top" id="web-mx-2Bk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionviewOutlet" destination="vrR-Wv-56M" id="I7r-f6-KZf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="t3v-eR-UAc" id="yGU-40-xTX"/>
+                                    <outlet property="delegate" destination="t3v-eR-UAc" id="16p-1T-lBs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Front Page" id="cb2-Hi-guE"/>
+                    <navigationItem key="navigationItem" id="uQ4-UZ-vdH"/>
+                    <connections>
+                        <segue destination="1w7-e9-tQD" kind="show" identifier="toPost" id="h8L-JT-47z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hew-M1-zrx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3723" y="6003"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="h2B-Og-cks"/>
+    </inferredMetricsTieBreakers>
+</document>
